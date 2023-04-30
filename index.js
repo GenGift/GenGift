@@ -3,7 +3,7 @@ $(document).ready(function() {
         $('#generate_gift').html('<span class="loader"></span>');
       // 创建发送到服务器的数据对象
       var dataToSend = '{"userInput":"My wife loves chocolate, moives and traveling"}';
-      gen_gifts('https://restless-haze-f818.chartech.workers.dev/', dataToSend);
+      gen_gifts('https://gengift.chartech.workers.dev/', dataToSend);
     });
   });
 
