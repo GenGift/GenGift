@@ -5,29 +5,21 @@
   <meta charSet="utf-8" />
   <meta name="viewport" content="width=device-width" />
   <title>Genie - AI Gifts Generator</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
   <meta name="next-head-count" content="7" />
-  <link rel="preload" href="./1aeb728581d2920a.css" as="style" />
-  <link rel="stylesheet" href="./1aeb728581d2920a.css" data-n-g="" />
+  <link rel="preload" href="./main.min.css" as="style" />
+  <link rel="stylesheet" href="./main.min.css" data-n-g="" />
   <meta http-equiv="Access-Control-Allow-Origin" content="*">
-
   <noscript data-n-css=""></noscript>
-  <script src="
-https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js
-"></script>
-  <script src="./index.js" defer=""></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+  <script src="./index.min.js" defer=""></script>
 </head>
 
 <body>
   <div id="__next">
-    <div style="display:none">Twemoji graphics made by Twitter and other contributors, licensed under CC-BY 4.0:<!-- -->
-      <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div>
-    <div>
-      <div style="position:fixed;z-index:9999;top:16px;left:16px;right:16px;bottom:16px;pointer-events:none"></div>
-    </div>
     <div class="root">
       <div class="container">
         <div class="header">
@@ -41,22 +33,46 @@ https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js
         <div class="prompt-container">
           <textarea class="prompt-box" placeholder="Start typing here...the more you write the better the gift ideas will be!"></textarea>
           <div class="prompt-buttons">
-            <button class="generate-button bg-rose-600 cursor-pointer w-full md:w-min whitespace-nowrap  focus-visible:outline-white hover:bg-rose-500">
-              <div class="generate" id="generate_gift">
+            <button id="generate_gift" class="generate-button bg-rose-600 cursor-pointer w-full md:w-min whitespace-nowrap  focus-visible:outline-white hover:bg-rose-500">
+              <div class="generate" >
                 <p>Generate</p>
               </div>
             </button>
           </div>
-          <div id="gift_items"></div>
+          <div id="gift_items" style="display:none;"></div>
           
         </div>
         
-        <div id="send_birthday">
-          
+        <div id="send_birthday" style="display:none;">
+            <div class="pb-20 text-center max-w-[600px] w-full bg-white rounded-2xl p-8 mt-[-40px]">
+              <div class="text-rose-400 text-[24px] font-semibold mb-4">That's too soon...remind me before their birthday</div>
+              <div class="text-[rgba(0,0,0,0.6)] py-4 font-semibold text-[20px]">&nbsp;We'll send you a reminder before your loved one's birthday, with 10 creative gift ideas! </div>
+              <div class="max-w-[450px]" style="margin: 0px auto;">
+                <form class="md:bg-white md:rounded-full overflow-hidden md:flex md:flex-row md:justify-center md:gap-2 md:border-2">
+                  <div class="bg-white rounded-full overflow-hidden flex flex-row justify-center col block md:hidden">
+                    <select class="bg-white text-zinc-500 outline-none focus-within:border-none p-2 mr-2">
+                      <option value="default" disabled="" hidden="">Day</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>
+                    </select>
+                    <select class="bg-white text-zinc-500 outline-none focus-within:border-none p-2 mr-2">
+                      <option value="default" disabled="" hidden="">Month</option><option value="Jan">Jan</option><option value="Feb">Feb</option><option value="Mar">Mar</option><option value="Apr">Apr</option><option value="May">May</option><option value="Jun">Jun</option><option value="Jul">Jul</option><option value="Aug">Aug</option><option value="Sep">Sep</option><option value="Oct">Oct</option><option value="Nov">Nov</option><option value="Dec">Dec</option></select></div><div class="bg-white rounded-full overflow-hidden flex flex-row justify-center col border-2 md:border-0"><input class="rounded-full w-full p-4 flex-grow bg-white text-black outline-none border-r-2 border-r-grey-200 focus-visible:border-white" placeholder="Your email" type="email" value=""><select class="bg-white text-zinc-500 outline-none focus-within:border-none p-2 mr-2 hidden md:block"><option value="default" disabled="" hidden="">Day</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>
+                    </select>
+                    <select class="bg-white text-zinc-500 outline-none focus-within:border-none p-2 mr-2 hidden md:block">
+                      <option value="default" disabled="" hidden="">Month</option><option value="Jan">Jan</option><option value="Feb">Feb</option>
+                      <option value="Mar">Mar</option><option value="Apr">Apr</option><option value="May">May</option><option value="Jun">Jun</option><option value="Jul">Jul</option><option value="Aug">Aug</option><option value="Sep">Sep</option><option value="Oct">Oct</option><option value="Nov">Nov</option><option value="Dec">Dec</option>
+                    </select>
+                  </div>
+                  <button class="generate-button bg-rose-600 cursor-pointer w-full md:w-min whitespace-nowrap mt-4 md:m-0 focus-visible:outline-white hover:bg-rose-500">
+                    <div class="generate">
+                      <p>Send</p>
+                    </div>
+                  </button>
+                </form>
+              </div>
+            </div>
         </div>
         
  
-        <div class="text-white-400 text-center">Built with Love by<br class="md:hidden" /> Gift Peak © 2023</div>
+        <div class="text-white-400 text-center">Built with Love by<br class="md:hidden" /> Gen Gift © 2023</div>
       </div>
 
       <div class="text-xs opacity-80 text-center px-2">As an Amazon Associate we may earn a commission from qualifying
@@ -69,6 +85,7 @@ https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js
       </div>
     </div>
   </div>
+
 </body>
 
 </html>
